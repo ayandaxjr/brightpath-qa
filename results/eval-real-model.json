@@ -1,0 +1,98 @@
+{
+  "model": "local:onnx-community/Qwen2.5-0.5B-Instruct",
+  "runAt": "2026-11-13T10:45:33.733Z",
+  "rows": [
+    {
+      "question": "How do I start my first lesson?",
+      "expected": "Doc 1",
+      "got": "Doc 1",
+      "passed": true,
+      "answerMode": "quoted",
+      "answer": "After joining, open Home and select Start Lesson 1: Set your goal.",
+      "note": "Model answer rejected: only 39% of its words appear in the documents. Fell back to quoting the documents."
+    },
+    {
+      "question": "How many lessons are in the Foundations course?",
+      "expected": "Doc 1",
+      "got": "Doc 1",
+      "passed": true,
+      "answerMode": "generated",
+      "answer": "There are 6 lessons in the Foundations course."
+    },
+    {
+      "question": "How do I save my progress after a lesson?",
+      "expected": "Doc 1",
+      "got": "Doc 1",
+      "passed": true,
+      "answerMode": "quoted",
+      "answer": "To save your progress, select Mark complete after finishing a lesson.",
+      "note": "Model answer rejected: it states numbers not in the documents (2, once). Fell back to quoting the documents."
+    },
+    {
+      "question": "When is the group coaching session and where do I find the link?",
+      "expected": "Doc 2",
+      "got": "Doc 2",
+      "passed": false,
+      "answerMode": "quoted",
+      "answer": "A group coaching session takes place every Tuesday at 16:00 UTC.",
+      "note": "Model answer rejected: it states numbers not in the documents (three). Fell back to quoting the documents."
+    },
+    {
+      "question": "When are coaching recordings available?",
+      "expected": "Doc 2",
+      "got": "Doc 2",
+      "passed": true,
+      "answerMode": "generated",
+      "answer": "Coaching recordings are added to the Coaching page within 24 hours."
+    },
+    {
+      "question": "How long does feedback on practice work take?",
+      "expected": "Doc 2",
+      "got": "Doc 2",
+      "passed": true,
+      "answerMode": "generated",
+      "answer": "Feedback typically arrives within 2 working days after the practice work is completed."
+    },
+    {
+      "question": "I forgot my password, what do I do?",
+      "expected": "Doc 3",
+      "got": "Doc 3",
+      "passed": true,
+      "answerMode": "quoted",
+      "answer": "To reset a password, select Forgot password on the sign-in page. Never ask a member to send a password.",
+      "note": "Model answer rejected: it states numbers not in the documents (1, 2, once). Fell back to quoting the documents."
+    },
+    {
+      "question": "My lesson progress is wrong, who do I contact?",
+      "expected": "Doc 3",
+      "got": "not_found",
+      "passed": false,
+      "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+      "note": "Model answer rejected: it states numbers not in the documents (once)."
+    },
+    {
+      "question": "Can I download the lesson videos to watch offline?",
+      "expected": "not_found",
+      "got": "not_found",
+      "passed": true,
+      "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+      "note": "Model answer rejected: it states numbers not in the documents (2)."
+    },
+    {
+      "question": "Will BrightPath help me get a job?",
+      "expected": "not_found",
+      "got": "not_found",
+      "passed": true,
+      "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+      "note": "Pricing, refunds and job placement are excluded by Doc 3 — Account help; the model was not called."
+    },
+    {
+      "question": "Is there a mobile app?",
+      "expected": "not_found",
+      "got": "not_found",
+      "passed": true,
+      "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+      "note": "No document matched the question; the model was not called."
+    }
+  ]
+}

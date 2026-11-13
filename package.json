@@ -1,0 +1,20 @@
+{
+  "name": "brightpath-qa",
+  "version": "1.0.0",
+  "description": "Small document-grounded Q&A over fictional BrightPath Learn docs",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "ask": "node src/cli.js",
+    "test": "node tests/run-tests.js",
+    "eval": "node tests/eval.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "^3.8.1"
+  }
+}

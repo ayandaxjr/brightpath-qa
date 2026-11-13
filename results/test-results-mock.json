@@ -1,0 +1,77 @@
+{
+  "model": "MOCK (not a real language model)",
+  "runAt": "2026-11-13T10:45:51.772Z",
+  "results": [
+    {
+      "scenario": "Answered by the documents",
+      "question": "When is the group coaching session?",
+      "passed": true,
+      "ms": 5,
+      "result": {
+        "status": "answered",
+        "answerMode": "generated",
+        "answer": "[MOCK] A group coaching session takes place every Tuesday at 16:00 UTC.",
+        "sources": [
+          {
+            "id": "Doc 2",
+            "title": "Document 2 — Coaching and feedback",
+            "file": "docs/doc2-coaching-and-feedback.md",
+            "quote": "A group coaching session takes place every Tuesday at 16:00 UTC."
+          }
+        ],
+        "model": "MOCK (not a real language model)"
+      }
+    },
+    {
+      "scenario": "Not answered by the documents",
+      "question": "How much does the Foundations course cost, and can I get a refund?",
+      "passed": true,
+      "ms": 1,
+      "result": {
+        "status": "not_found",
+        "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+        "sources": [],
+        "model": "MOCK (not a real language model)",
+        "note": "Pricing, refunds and job placement are excluded by Doc 3 — Account help; the model was not called."
+      }
+    },
+    {
+      "scenario": "Not answered, but looks related (model must refuse)",
+      "question": "Can I download the lesson videos to watch offline?",
+      "passed": false,
+      "ms": 1,
+      "result": {
+        "status": "answered",
+        "answerMode": "generated",
+        "answer": "[MOCK] Watching a video alone does not mark the lesson complete.",
+        "sources": [
+          {
+            "id": "Doc 1",
+            "title": "Document 1 — Getting started",
+            "file": "docs/doc1-getting-started.md",
+            "quote": "Watching a video alone does not mark the lesson complete."
+          }
+        ],
+        "model": "MOCK (not a real language model)"
+      }
+    },
+    {
+      "scenario": "Model / API failure",
+      "question": "How do I reset my password?",
+      "passed": true,
+      "ms": 2,
+      "result": {
+        "status": "model_unavailable",
+        "message": "The AI model is unavailable right now, so no answer was generated. Please try again in a few minutes.",
+        "detail": "Simulated model failure (test mode).",
+        "relatedDocuments": [
+          {
+            "id": "Doc 3",
+            "title": "Document 3 — Account help"
+          }
+        ],
+        "model": "MOCK (not a real language model)"
+      }
+    }
+  ]
+}

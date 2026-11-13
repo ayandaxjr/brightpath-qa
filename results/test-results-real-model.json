@@ -1,0 +1,71 @@
+{
+  "model": "local:onnx-community/Qwen2.5-0.5B-Instruct",
+  "runAt": "2026-11-13T10:43:00.850Z",
+  "results": [
+    {
+      "scenario": "Answered by the documents",
+      "question": "When is the group coaching session?",
+      "passed": true,
+      "ms": 6332,
+      "result": {
+        "status": "answered",
+        "answerMode": "generated",
+        "answer": "The group coaching session takes place every Tuesday from 16:00 UTC.",
+        "sources": [
+          {
+            "id": "Doc 2",
+            "title": "Document 2 — Coaching and feedback",
+            "file": "docs/doc2-coaching-and-feedback.md",
+            "quote": "A group coaching session takes place every Tuesday at 16:00 UTC."
+          }
+        ],
+        "model": "local:onnx-community/Qwen2.5-0.5B-Instruct"
+      }
+    },
+    {
+      "scenario": "Not answered by the documents",
+      "question": "How much does the Foundations course cost, and can I get a refund?",
+      "passed": true,
+      "ms": 0,
+      "result": {
+        "status": "not_found",
+        "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+        "sources": [],
+        "model": "local:onnx-community/Qwen2.5-0.5B-Instruct",
+        "note": "Pricing, refunds and job placement are excluded by Doc 3 — Account help; the model was not called."
+      }
+    },
+    {
+      "scenario": "Not answered, but looks related (model must refuse)",
+      "question": "Can I download the lesson videos to watch offline?",
+      "passed": true,
+      "ms": 30962,
+      "result": {
+        "status": "not_found",
+        "answer": "I could not find this in the supplied BrightPath documents, so I will not guess. Please contact support@brightpath.example (Monday to Friday, 09:00–17:00 UTC).",
+        "sources": [],
+        "model": "local:onnx-community/Qwen2.5-0.5B-Instruct",
+        "note": "Model answer rejected: it states numbers not in the documents (2).",
+        "rawModelOutput": "Yes, you can download the lesson videos to watch offline. To do this, follow these steps:\n\n1. Open your browser and navigate to the appropriate lesson within the Foundation's Learning Library.\n2. Click on the \"Download\" button located below the video title.\n3. Save the file to your device using a reliable online storage method like Google Drive or another cloud-based storage service.\n\nBy downloading the lesson files, you will have access to them offline without needing to purchase additional content from BrightPath Learn."
+      }
+    },
+    {
+      "scenario": "Model / API failure",
+      "question": "How do I reset my password?",
+      "passed": true,
+      "ms": 42,
+      "result": {
+        "status": "model_unavailable",
+        "message": "The AI model is unavailable right now, so no answer was generated. Please try again in a few minutes.",
+        "detail": "Simulated model failure (test mode).",
+        "relatedDocuments": [
+          {
+            "id": "Doc 3",
+            "title": "Document 3 — Account help"
+          }
+        ],
+        "model": "local:onnx-community/Qwen2.5-0.5B-Instruct"
+      }
+    }
+  ]
+}

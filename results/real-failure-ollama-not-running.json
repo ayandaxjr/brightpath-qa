@@ -1,0 +1,12 @@
+{
+  "status": "model_unavailable",
+  "message": "The AI model is unavailable right now, so no answer was generated. Please try again in a few minutes.",
+  "detail": "Model call failed (ollama:llama3.2:3b): fetch failed",
+  "relatedDocuments": [
+    {
+      "id": "Doc 2",
+      "title": "Document 2 — Coaching and feedback"
+    }
+  ],
+  "model": "ollama:llama3.2:3b"
+}
